@@ -1,0 +1,30 @@
+﻿@page
+@model PrototypeDatabase.Pages.AdminPages.AdminIndexModel
+@{ }
+<!-- Default page for the admin user -->
+<h1>:: Admin Page ::</h1>
+<br />
+
+<h2>Welcome @Model.FirstName</h2>
+
+<br />
+<div class="row">
+
+    <div class="col-sm-2">
+        <p><a asp-page="/LibraryMembers/Index">Create User</a></p>
+    </div>
+
+    <div class="col-sm-2">
+        <p><a asp-page="/AdminPages/ViewUsers">View User List</a></p>
+    </div>
+
+    <div class="col-sm-2">
+        <p><a asp-page="/LogoutPage/Logout">Logout</a></p>
+    </div>
+
+    <div class="col-sm-2">
+        <p><a asp-page="/AccountDetails/ViewAccount">View Account</a></p>
+    </div>
+
+</div>
+

@@ -1,0 +1,34 @@
+﻿@page
+@model PrototypeDatabase.Pages.AccountDetails.ViewAccountModel
+@{
+}
+
+<!-- Displays all the current logged in users information as well as hyperlinks to change password and edit details -->
+
+<h1>::@Model.Role Account Page ::</h1>
+<br />
+<h2>Welcome: @Model.FirstName</h2>
+<br />
+
+<h3>Account Details</h3>
+
+<p>Username:                    @Model.UserName</p>
+<p>Role:                        @Model.Role</p>
+<p>Email Address:               @Model.Email  </p>
+<p>First Name:                  @Model.FirstName </p>
+<p>Surname:                     @Model.LastName</p>
+<p>First Security Question:     @Model.FirstQuestion</p>
+<p>Answer:                      @Model.FirstAnswer</p>
+<p>Second Security Question:    @Model.SecondQuestion</p>
+<p>Answer:                      @Model.SecondAnswer</p>
+
+
+<div>
+    <p><a asp-page="/AccountDetails/ChangePassword">Change Password</a></p>
+</div>
+<div>
+    <p><a asp-page="/AccountDetails/EditAccount">Edit Account Details</a></p>
+</div>
+<div>
+    <p><a asp-page="/UserPages/UserIndex">Back to Main Page</a></p>
+</div>

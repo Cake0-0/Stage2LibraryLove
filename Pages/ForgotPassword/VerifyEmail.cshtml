@@ -1,0 +1,33 @@
+﻿@page
+@model PrototypeDatabase.Pages.ForgotPassword.VerifyEmailModel
+@{
+}
+
+<h1>:: Forgot Password ::</h1>
+
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <!-- Asks for email input to check if account exists in system before next step -->
+            <div class="form-group">
+                <label class="control-label">Please enter the account Email</label>
+                <input type="email" asp-for="NewUser.Email" class="form-control" required />
+                <span asp-validation-for="NewUser.Email" class="text-danger"></span>
+            </div>
+
+            <div>
+                <input type="submit" value="Next Step" class="btn btn-primary" />
+            </div>
+
+        </form>
+
+        <div>
+            <p style="color: red">@Model.Message</p>
+        </div>
+
+        <div>
+            <p> <a asp-page="/ForgotPassword/VerifyEmail"> Forgot Password </a> </p>
+        </div>
+    </div>
+</div>

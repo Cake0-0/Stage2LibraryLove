@@ -1,0 +1,59 @@
+﻿@page
+@model PrototypeDatabase.Pages.EditAccount.EditAccountModel
+@{
+}
+
+<h1>:: Edit Details ::</h1>
+
+<br /> <!-- form that has username hidden for calling in the code, and has values of the current account already filled in -->
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label class="control-label">Email Address</label>
+                <input type="email" asp-for="NewUser.Email" class="form-control" value="@Model.Email" input id="emailAddress" required />
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">First Name</label>
+                <input type="text" asp-for="NewUser.FirstName" class="form-control" value="@Model.FirstName" required />
+            </div>
+            <br />
+            <div>
+                <label class="control-label">Surname</label>
+                <input type="text" asp-for="NewUser.LastName" class="form-control" value="@Model.LastName" required />
+            </div>
+            <br />
+            <div>
+                <label class="control-label">Security Question #1</label>
+                <input type="text" asp-for="NewUser.FirstQuestion" class="form-control" value="@Model.FirstQuestion" required />
+            </div>
+            <br />
+            <div>
+                <label class="control-label">Security Question #1 Answer</label>
+                <input type="text" asp-for="NewUser.FirstAnswer" class="form-control" value="@Model.FirstAnswer" required />
+            </div>
+            <br />
+            <div>
+                <label class="control-label">Security Question #2</label>
+                <input type="text" asp-for="NewUser.SecondQuestion" class="form-control" value="@Model.SecondQuestion" required />
+            </div>
+            <br />
+            <div>
+                <label class="control-label">Security Question #2 Answer</label>
+                <input type="text" asp-for="NewUser.SecondAnswer" class="form-control" value="@Model.SecondAnswer" required />
+            </div>
+            <br />
+            <div>
+                <input type="submit" value="Update Details" asp-page-handler="Change" asp-route-sessioncount="5" class="btn btn-primary" />
+            </div>
+            <input type="hidden" asp-for="NewUser.Username" class="form-control" value="@Model.UserName" />
+            <br />
+
+            <div>
+                <input type="submit" value="Delete Account" asp-page-handler="Delete" asp-route-sessioncount="10" class="btn btn-secondary" />
+            </div>
+        </form>
+
+    </div>
+</div>

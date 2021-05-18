@@ -1,0 +1,98 @@
+﻿@page
+@model PrototypeDatabase.Pages.LibraryMembers.CreateUserModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+    <h1>:: User Creation Page ::</h1>
+
+    <!-- Form for user creation -->
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div class="form-group">
+                    <!-- Email, must contain at symbol by html rules  -->
+                    <label class="control-label">Email Address</label>
+                    <input type="email" asp-for="NewUser.Email" class="form-control" input id="emailAddress" required />
+
+                </div>
+                <!-- Role is hidden and defaults to user -->
+                <div>
+                    <input type="hidden" asp-for="NewUser.Role" class="form-control" value="User" />
+                </div>
+                <br />
+                <br />
+                <div class="form-group">
+                    <!-- First Name -->
+                    <label class="control-label">First Name</label>
+                    <input type="text" asp-for="NewUser.FirstName" class="form-control" required />
+                </div>
+                <br />
+                <div>
+                    <!-- Surname -->
+                    <label class="control-label">Surname</label>
+                    <input type="text" asp-for="NewUser.LastName" class="form-control" required />
+                </div>
+                <br />
+                <div>
+                    <!-- Username -->
+                    <label class="control-label">Username</label>
+                    <input type="text" class="form-control" asp-for="NewUser.Username" required />
+                </div>
+                <br />
+                <div>
+                    <!-- Password -->
+                    <label class="control-label">Password</label>
+                    <input name="NewUser.UserPass" required="required" type="password" id="password" class="form-control" />
+                </div>
+                <br />
+                <div>
+                    <!-- Confirm Password -->
+                    <label class="control-label">Confirm Password</label>
+                    <input name="password_confirm" required="required" type="password" id="password_confirm" oninput="check(this)" class="form-control" />
+                    <script language='javascript' type='text/javascript'>
+                        function check(input) {
+                            if (input.value != document.getElementById('password').value) {
+                                input.setCustomValidity('Password Must be Matching.');
+                            } else {
+                                // input is valid -- reset the error message
+                                input.setCustomValidity('');
+                            }
+                        }
+                    </script>
+                </div>
+                <br />
+                <div>
+                    <!-- Security Question 1/2, and answer 1/2 -->
+                    <label class="control-label">First Security Question</label>
+                    <input type="text" asp-for="NewUser.FirstQuestion" class="form-control" required />
+                </div>
+                <br />
+                <div>
+                    <label class="control-label">First Security Answer</label>
+                    <input type="text" asp-for="NewUser.FirstAnswer" class="form-control" required />
+                </div>
+                <br />
+                <div>
+                    <label class="control-label">Second Security Question</label>
+                    <input type="text" asp-for="NewUser.SecondQuestion" class="form-control" required />
+                </div>
+                <br />
+                <div>
+                    <label class="control-label">Second Security Answer</label>
+                    <input type="text" asp-for="NewUser.SecondAnswer" class="form-control" required />
+                </div>
+
+                <div>
+                    <input type="submit" value="Create" class="btn btn-secondary" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
